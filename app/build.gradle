@@ -1,0 +1,223 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.example.facefit"
+        minSdkVersion 24
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            splits.abi.enable = false
+            splits.density.enable = false
+            aaptOptions.cruncherEnabled = false
+        }
+    }
+    dexOptions {
+        preDexLibraries true
+        maxProcessCount 8
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+}
+
+dependencies {
+    implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'com.google.firebase:firebase-core:17.2.0'
+    implementation 'com.google.firebase:firebase-auth:19.2.0'
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+    implementation 'com.facebook.android:facebook-login:5.4.0'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation 'com.google.firebase:firebase-database:19.2.1'
+    implementation 'com.google.firebase:firebase-analytics:17.2.2'
+    implementation 'com.google.firebase:firebase-firestore:21.4.0'
+    implementation 'com.google.firebase:firebase-storage:19.1.1'
+    implementation 'com.gitlab.manimaran:aboutusactivity:v1.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.0.0'
+    implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.+'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation "androidx.recyclerview:recyclerview:1.1.0"
+
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'com.google.ar:core:1.15.0'
+    implementation "com.google.ar.sceneform.ux:sceneform-ux:1.15.0"
+    implementation 'com.intellij:annotations:+@jar'
+    implementation 'com.google.ar.sceneform:assets:1.15.0'
+}
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.ar.sceneform.plugin'
+
+
+sceneform.asset('sampledata/models/done.fbx',
+        'default',
+        'sampledata/models/done.sfa',
+        'src/main/assets/done')
+
+sceneform.asset('sampledata/models/done2.fbx',
+        'default',
+        'sampledata/models/done2.sfa',
+        'src/main/assets/done2')
+
+sceneform.asset('sampledata/models/done3.fbx',
+        'default',
+        'sampledata/models/done3.sfa',
+        'src/main/assets/done3')
+
+sceneform.asset('sampledata/models/done4.fbx',
+        'default',
+        'sampledata/models/done4.sfa',
+        'src/main/assets/done4')
+
+sceneform.asset('sampledata/models/done5.fbx',
+        'default',
+        'sampledata/models/done5.sfa',
+        'src/main/assets/done5')
+
+sceneform.asset('sampledata/models/done6.fbx',
+        'default',
+        'sampledata/models/done6.sfa',
+        'src/main/assets/done6')
+
+sceneform.asset('sampledata/models/done7.fbx',
+        'default',
+        'sampledata/models/done7.sfa',
+        'src/main/assets/done7')
+
+sceneform.asset('sampledata/models/done8.fbx',
+        'default',
+        'sampledata/models/done8.sfa',
+        'src/main/assets/done8')
+
+sceneform.asset('sampledata/models/done9.fbx',
+        'default',
+        'sampledata/models/done9.sfa',
+        'src/main/assets/done9')
+
+sceneform.asset('sampledata/models/done10.fbx',
+        'default',
+        'sampledata/models/done10.sfa',
+        'src/main/assets/done10')
+sceneform.asset('sampledata/models/done11.fbx',
+        'default',
+        'sampledata/models/done11.sfa',
+        'src/main/assets/done11')
+
+sceneform.asset('sampledata/models/done12.fbx',
+        'default',
+        'sampledata/models/done12.sfa',
+        'src/main/assets/done12')
+
+sceneform.asset('sampledata/models/done13.fbx',
+        'default',
+        'sampledata/models/done13.sfa',
+        'src/main/assets/done13')
+
+sceneform.asset('sampledata/models/done14.fbx',
+        'default',
+        'sampledata/models/done14.sfa',
+        'src/main/assets/done14')
+
+sceneform.asset('sampledata/models/done15.fbx',
+        'default',
+        'sampledata/models/done15.sfa',
+        'src/main/assets/done15')
+
+sceneform.asset('sampledata/models/done16.fbx',
+        'default',
+        'sampledata/models/done16.sfa',
+        'src/main/assets/done16')
+
+sceneform.asset('sampledata/models/done17.fbx',
+        'default',
+        'sampledata/models/done17.sfa',
+        'src/main/assets/done17')
+
+sceneform.asset('sampledata/models/done18.fbx',
+        'default',
+        'sampledata/models/done18.sfa',
+        'src/main/assets/done18')
+
+sceneform.asset('sampledata/models/done19.fbx',
+        'default',
+        'sampledata/models/done19.sfa',
+        'src/main/assets/done19')
+
+sceneform.asset('sampledata/models/done20.fbx',
+        'default',
+        'sampledata/models/done20.sfa',
+        'src/main/assets/done20')
+sceneform.asset('sampledata/models/done21.fbx',
+        'default',
+        'sampledata/models/done21.sfa',
+        'src/main/assets/done21')
+
+sceneform.asset('sampledata/models/done22.fbx',
+        'default',
+        'sampledata/models/done22.sfa',
+        'src/main/assets/done22')
+
+sceneform.asset('sampledata/models/done23.fbx',
+        'default',
+        'sampledata/models/done23.sfa',
+        'src/main/assets/done23')
+
+sceneform.asset('sampledata/models/done24.fbx',
+        'default',
+        'sampledata/models/done24.sfa',
+        'src/main/assets/done24')
+
+sceneform.asset('sampledata/models/done25.fbx',
+        'default',
+        'sampledata/models/done25.sfa',
+        'src/main/assets/done25')
+
+sceneform.asset('sampledata/models/done26.fbx',
+        'default',
+        'sampledata/models/done26.sfa',
+        'src/main/assets/done26')
+
+sceneform.asset('sampledata/models/done27.fbx',
+        'default',
+        'sampledata/models/done27.sfa',
+        'src/main/assets/done27')
+
+sceneform.asset('sampledata/models/done28.fbx',
+        'default',
+        'sampledata/models/done28.sfa',
+        'src/main/assets/done28')
+
+sceneform.asset('sampledata/models/done29.fbx',
+        'default',
+        'sampledata/models/done29.sfa',
+        'src/main/assets/done29')
+
+sceneform.asset('sampledata/models/done30.fbx',
+        'default',
+        'sampledata/models/done30.sfa',
+        'src/main/assets/done30')
+
+
+
