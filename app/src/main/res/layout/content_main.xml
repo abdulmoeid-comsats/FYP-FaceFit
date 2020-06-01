@@ -450,6 +450,9 @@
                 android:layout_width="fill_parent"
                 android:layout_height="2px"
                 android:background="@color/white_greyish" />
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
             <GridView
                 android:id="@+id/preferencesGrid"
                 android:numColumns="auto_fit"
@@ -458,6 +461,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
+            </ScrollView>
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2px"

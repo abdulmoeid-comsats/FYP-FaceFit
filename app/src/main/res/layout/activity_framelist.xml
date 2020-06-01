@@ -24,7 +24,7 @@
             android:paddingTop="10dp"
             app:popupTheme="@style/AppTheme.PopupOverlay">
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:orientation="horizontal">
@@ -38,9 +38,10 @@
                     tools:ignore="OnClick"></ImageView>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="100dp"
+                    android:gravity="center"
+                    android:layout_marginRight="30dp"
                     android:text="All Frames"
                     android:textColor="@color/white_greyish"
                     android:textSize="20sp"
@@ -50,12 +51,12 @@
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Frame Details"
             android:textColor="@color/background_color"
             android:textSize="25sp"
-            android:layout_marginLeft="120dp"
+            android:gravity="center"
             android:layout_marginTop="65dp"
             android:textStyle="bold"></TextView>
     <View

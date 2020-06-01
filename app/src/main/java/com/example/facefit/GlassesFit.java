@@ -308,5 +308,6 @@ public class GlassesFit extends AppCompatActivity {
     }
 
     public void onSuggestions(View view) {
+        startActivity(new Intent(GlassesFit.this,Suggestions.class));
     }
 }

@@ -36,15 +36,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:clickable="true"
+                        android:layout_marginTop="10dp"
                         android:onClick="closeActivity"
                         android:src="@drawable/back">
                         ></ImageView>
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="100dp"
                         android:text="Edit Profile"
+                        android:gravity="center"
+                        android:layout_marginRight="30dp"
+                        android:layout_marginTop="10dp"
                         android:textColor="@color/white_greyish"
                         android:textSize="20sp"
                         android:textStyle="bold"></TextView>
@@ -90,6 +93,7 @@
             android:textColor="@color/background_color"
             android:textSize="15sp"
             android:textStyle="bold"
+            android:layout_marginTop="20dp"
             android:layout_marginBottom="40dp"/>
 
 
@@ -116,9 +120,9 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
+                android:gravity="right"
                 android:id="@+id/editpass"
                 android:text="Edit"
                 android:onClick="chnagePass"
@@ -126,7 +130,6 @@
                 android:textColor="@color/background_color"
                 android:textSize="20sp"
                 android:textStyle="normal"
-                android:layout_marginLeft="150dp"
                 android:layout_marginBottom="20dp"/>
 
         </LinearLayout>
@@ -153,9 +156,9 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
+                android:gravity="right"
                 android:id="@+id/editbio"
                 android:text="Edit"
                 android:onClick="editBio"
@@ -163,7 +166,6 @@
                 android:textColor="@color/background_color"
                 android:textSize="20sp"
                 android:textStyle="normal"
-                android:layout_marginLeft="120dp"
                 android:layout_marginBottom="20dp"/>
 
         </LinearLayout>
@@ -182,7 +184,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="left"
+                android:gravity="right"
                 android:id="@+id/pref"
                 android:text="Edit Preferences"
                 android:textColor="@color/background_color"
@@ -190,9 +192,9 @@
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp"/>
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left"
+                android:gravity="right"
                 android:id="@+id/editpref"
                 android:text="Edit"
                 android:onClick="editPref"
@@ -200,7 +202,6 @@
                 android:textColor="@color/background_color"
                 android:textSize="20sp"
                 android:textStyle="normal"
-                android:layout_marginLeft="125dp"
                 android:layout_marginBottom="20dp"/>
 
         </LinearLayout>

@@ -20,7 +20,7 @@
             android:layout_height="60dp"
             android:layout_margin="24dp"
             android:onClick="onSuggestions"
-            android:src="@drawable/suggestion" />
+            android:src="@drawable/smart" />
         <ImageView
             android:layout_width="100dp"
             android:layout_height="100dp"

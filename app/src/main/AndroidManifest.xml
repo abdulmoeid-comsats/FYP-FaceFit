@@ -31,9 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".FacebookLoginActivity"
-            android:label="Facebook Login"/>
         <activity android:name=".ProfileActivity"></activity>
         <activity android:name=".DashboardActivity"
             android:screenOrientation="nosensor"></activity>
@@ -51,6 +48,7 @@
         <activity android:name=".GlassesFit" />
         <activity android:name=".ViewExperiences" />
         <activity android:name=".ImageViewer" />
+        <activity android:name=".Suggestions" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

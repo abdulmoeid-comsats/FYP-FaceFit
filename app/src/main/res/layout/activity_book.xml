@@ -21,10 +21,9 @@
             android:layout_height="66dp"
             android:background="@color/background_color"
             android:minHeight="90dp"
-            android:paddingTop="10dp"
             app:popupTheme="@style/AppTheme.PopupOverlay">
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:orientation="horizontal">
@@ -38,10 +37,11 @@
                     tools:ignore="OnClick"></ImageView>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="100dp"
                     android:text="Frames Details"
+                    android:gravity="center"
+                    android:layout_marginRight="30dp"
                     android:textColor="@color/white_greyish"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>

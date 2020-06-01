@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".ViewExperiences"
+    tools:context=".Suggestions"
     android:background="#fff">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:layout_marginRight="30dp"
-                    android:text="My Experiences"
+                    android:text="Suggestions"
                     android:textColor="@color/white_greyish"
                     android:textSize="20sp"
                     android:textStyle="bold"></TextView>
@@ -53,10 +53,10 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Experiences Images"
+        android:text="Selected Frame Images"
         android:textColor="@color/background_color"
         android:textSize="25sp"
-       android:gravity="center"
+        android:gravity="center"
         android:layout_marginTop="65dp"
         android:textStyle="bold"></TextView>
     <View
@@ -65,7 +65,7 @@
         android:layout_marginTop="98dp"
         android:background="@color/white_greyish"></View>
     <GridView
-        android:id="@+id/expGrid"
+        android:id="@+id/suggGrid"
         android:numColumns="auto_fit"
         android:gravity="center"
         android:columnWidth="200dp"
