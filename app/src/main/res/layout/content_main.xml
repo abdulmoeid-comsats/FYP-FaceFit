@@ -451,23 +451,13 @@
                 android:layout_height="2px"
                 android:background="@color/white_greyish" />
             <GridView
-                android:id="@+id/glassesgridview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:columnWidth="100dp"
+                android:id="@+id/preferencesGrid"
                 android:numColumns="auto_fit"
-                android:verticalSpacing="24dp"
-                android:horizontalSpacing="10dp"
-                android:stretchMode="spacingWidthUniform"
-                />
-            <Button
+                android:gravity="center"
+                android:columnWidth="200dp"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/addFrame"
-                android:text="Add Frame"
-                android:textColor="#3f3f3f"
-                android:background="@color/white"></Button>
+                android:layout_height="match_parent" />
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="2px"

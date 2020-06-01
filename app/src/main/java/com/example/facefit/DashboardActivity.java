@@ -12,10 +12,13 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -38,6 +41,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 import coopon.manimaran.aboutusactivity.AboutActivityBuilder;
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -47,12 +52,21 @@ public class DashboardActivity extends AppCompatActivity implements  NavigationV
     private static LinearLayout splash,home,menu;
     private static Animation fromBottom;
 
-    private static Button add;
+    private static GridView prefGrid;
 
     private static CardView armani,dolce,rayban,nike,police,prada,tom;
 
+    private User u;
+
     private static CircleImageView profileimg;
-    private static TextView username,user_email,viewFrame,arFrame;
+    private static TextView username,user_email;
+    private static ListAdapter lAdapter;
+    private static final String TAG ="" ;
+    final ArrayList<String> names = new ArrayList<String>();
+    final ArrayList<String> brands = new ArrayList<String>();
+    final ArrayList<String> price = new ArrayList<String>();
+    final ArrayList<String> imageUrl = new ArrayList<String>();
+    final ArrayList<String> brandid = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +99,66 @@ public class DashboardActivity extends AppCompatActivity implements  NavigationV
         nike=(CardView)findViewById(R.id.nike);
         police=(CardView)findViewById(R.id.police);
         prada=(CardView)findViewById(R.id.prada);
+
+        prefGrid=(GridView)findViewById(R.id.preferencesGrid);
+
+        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("users").child(CurrentUser.userid);
+        UsersRef.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot)
+            {
+                if (dataSnapshot.exists())
+                {
+                    if (dataSnapshot.child("imgUrl").exists())
+                    {
+                        u = dataSnapshot.getValue(User.class);
+                        Picasso.get().load(u.imgUrl).into(profileimg);
+                        username.setText(u.first_name+" "+u.last_name);
+
+                        DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference().child("frames");
+                        ValueEventListener eventListener = new ValueEventListener() {
+                            @Override
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                for (DataSnapshot dataSnapshotCh : dataSnapshot.getChildren()) {
+                                    if (u.preferences.contains(dataSnapshotCh.child("brand").getValue().toString())) {
+                                        names.add(dataSnapshotCh.child("name").getValue().toString());
+                                        brands.add(dataSnapshotCh.child("brand").getValue().toString());
+                                        price.add(dataSnapshotCh.child("price").getValue().toString());
+                                        imageUrl.add(dataSnapshotCh.child("imgUrl").getValue().toString());
+                                        brandid.add(dataSnapshotCh.getKey());
+                                    }
+
+                                }
+                                lAdapter = new ListAdapter(DashboardActivity.this, names, price, brands, imageUrl);
+                                prefGrid.setAdapter(lAdapter);
+                                prefGrid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                                    @Override
+                                    public void onItemClick(AdapterView<?> parent, View view,
+                                                            int position, long id) {
+                                        Toast.makeText(DashboardActivity.this,brandid.get(position),Toast.LENGTH_SHORT).show();
+                                        CurrentUser.frameSelected=brandid.get(position);
+                                        startActivity(new Intent(DashboardActivity.this,BookFrame.class));
+                                    }
+                                });
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        };
+                        mDatabase.addValueEventListener(eventListener);
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
         armani.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,15 +209,6 @@ public class DashboardActivity extends AppCompatActivity implements  NavigationV
             }
         });
 
-        add=(Button)findViewById(R.id.addFrame);
-        add.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(DashboardActivity.this,AddFrame.class));
-            }
-        });
-
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         final LinearLayout holder=findViewById(R.id.holder);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -185,31 +250,6 @@ public class DashboardActivity extends AppCompatActivity implements  NavigationV
 
         user_email.setText(CurrentUser.u_email);
 
-        DatabaseReference UsersRef = FirebaseDatabase.getInstance().getReference().child("users").child(CurrentUser.userid);
-
-        UsersRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                if (dataSnapshot.exists())
-                {
-                    if (dataSnapshot.child("imgUrl").exists())
-                    {
-                        String image = dataSnapshot.child("imgUrl").getValue().toString();
-                        String fname = dataSnapshot.child("first_name").getValue().toString();
-                        String lname = dataSnapshot.child("last_name").getValue().toString();
-
-                        Picasso.get().load(image).into(profileimg);
-                        username.setText(fname+" "+lname);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-
-            }
-        });
 
     }
     @Override

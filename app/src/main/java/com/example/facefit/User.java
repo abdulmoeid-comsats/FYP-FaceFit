@@ -15,6 +15,9 @@ public class User {
     public String imgUrl;
     public ArrayList<String> preferences = new ArrayList<String>();
 
+    public User(){
+
+    }
 
     public User(String email, String first_name, String last_name, String phone_number, String address,String gender,String imgUrl, ArrayList<String>  preferences) {
         this.email=email;

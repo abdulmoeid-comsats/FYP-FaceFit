@@ -20,7 +20,7 @@
             android:layout_height="66dp"
             android:background="@color/background_color"
             android:minHeight="90dp"
-            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
             <LinearLayout
@@ -40,7 +40,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="100dp"
+                    android:layout_marginLeft="100dp"
                     android:text="About Us"
                     android:textColor="@color/white_greyish"
                     android:textSize="20sp"
@@ -68,23 +68,23 @@
             android:layout_height="151dp"
             android:src="@drawable/logo"></ImageView>
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:paddingTop="10dp"
+            android:layout_marginTop="10dp"
             android:text="@string/app_name"
             android:textColor="@color/background_color"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/app_descp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="15sp"
             android:textStyle="normal" />
@@ -96,55 +96,55 @@
             android:background="@color/white_greyish" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="10dp"
             android:text="Developed By"
-            android:paddingBottom="2dp"
+            android:layout_marginBottom="2dp"
             android:textColor="@color/background_color"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Abdul Moeid Zahoor"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="20sp"
             android:textStyle="normal" />
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="FA16-BCS-117"
-            android:paddingBottom="10dp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="15sp"
             android:textStyle="normal" />
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Fayyaz Shah"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="20sp"
             android:textStyle="normal" />
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="FA16-BCS-121"
-            android:paddingBottom="5dp"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="15sp"
             android:textStyle="normal" />
@@ -155,34 +155,34 @@
             android:background="@color/white_greyish" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:paddingTop="2dp"
             android:text="Powered By"
-            android:paddingBottom="2dp"
+            android:layout_marginBottom="2dp"
             android:textColor="@color/background_color"
             android:textSize="25sp"
             android:textStyle="bold" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Expert Vision"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="20sp"
             android:textStyle="normal" />
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/descp_ind"
-            android:paddingBottom="10dp"
-            android:paddingLeft="60dp"
-            android:paddingRight="60dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="15sp"
             android:textStyle="normal" />
@@ -192,22 +192,22 @@
             android:background="@color/white_greyish" />
 
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Licence to Expert Vision"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="15sp"
             android:textStyle="bold" />
         <TextView
-            android:layout_width="fill_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="Version 1.0"
-            android:paddingLeft="40dp"
-            android:paddingRight="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:textColor="@color/background_color"
             android:textSize="10sp"
             android:textStyle="normal" />

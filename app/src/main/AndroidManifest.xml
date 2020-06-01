@@ -49,7 +49,6 @@
         <activity android:name=".Booked" />
         <activity android:name=".ViewBookings" />
         <activity android:name=".GlassesFit" />
-        <activity android:name=".AddFrame" />
         <activity android:name=".ViewExperiences" />
         <activity android:name=".ImageViewer" />
 
