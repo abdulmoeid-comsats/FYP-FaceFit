@@ -6,32 +6,26 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
-public class ImageAdapter extends ArrayAdapter<String>{
+public class SuggestionAdapter extends ArrayAdapter<String> {
     private Activity context;
     private ArrayList<String> images = new ArrayList<String>();
 
-    public ImageAdapter(Activity context, ArrayList<String> images){
-        super(context, R.layout.exp_layout, images);
+    public SuggestionAdapter(Activity context, ArrayList<String> images){
+        super(context, R.layout.suggestion_layout, images);
         this.context = context;
         this.images = images;
-        }
+    }
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = context.getLayoutInflater();
         View listViewItem = inflater.inflate(R.layout.exp_layout, null, true);
         ImageView image = (ImageView) listViewItem.findViewById(R.id.userImg);
-        ImageView download = (ImageView) listViewItem.findViewById(R.id.dowmloadImg);
-        ImageView delete = (ImageView) listViewItem.findViewById(R.id.deleteImg);
-        ImageView share = (ImageView) listViewItem.findViewById(R.id.shareImg);
-
         Picasso.get().load(images.get(position)).into(image);
 
 

@@ -54,6 +54,7 @@ public class ViewExperiences extends AppCompatActivity {
         };
         mDatabase.addValueEventListener(eventListener);
 
+
         gView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
             @Override
@@ -61,14 +62,17 @@ public class ViewExperiences extends AppCompatActivity {
                                     int position, long id) {
               //  Toast.makeText(ViewExperiences.this,imageid.get(position),Toast.LENGTH_SHORT).show();
                 CurrentUser.imgUrl=images.get(position);
-              //  Toast.makeText(ViewExperiences.this, CurrentUser.imgUrl,Toast.LENGTH_SHORT).show();
+                CurrentUser.imgID=imageid.get(position);
+                CurrentUser.imgViewType="";
                 startActivity(new Intent(ViewExperiences.this,ImageViewer.class));
+                finish();
             }
         });
 
 
     }
     public void closeActivity(View view) {
+        startActivity(new Intent(ViewExperiences.this,DashboardActivity.class));
         finish();
     }
 }

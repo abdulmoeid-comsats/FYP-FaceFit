@@ -21,7 +21,7 @@ import java.util.ArrayList;
 public class Suggestions extends AppCompatActivity {
 
     private static GridView gView;
-    private static ImageAdapter lAdapter;
+    private static SuggestionAdapter lAdapter;
     private static final String TAG ="" ;
     final ArrayList<String> images = new ArrayList<String>();
     final ArrayList<String> imageid = new ArrayList<String>();
@@ -41,7 +41,7 @@ public class Suggestions extends AppCompatActivity {
                     imageid.add(dataSnapshotCh.getKey());
 
                 }
-                lAdapter = new ImageAdapter(Suggestions.this,images);
+                lAdapter = new SuggestionAdapter(Suggestions.this,images);
                 gView.setAdapter(lAdapter);
             }
 
@@ -59,6 +59,7 @@ public class Suggestions extends AppCompatActivity {
                                     int position, long id) {
                 //  Toast.makeText(ViewExperiences.this,imageid.get(position),Toast.LENGTH_SHORT).show();
                 CurrentUser.imgUrl=images.get(position);
+                CurrentUser.imgViewType="suggestions";
                 //  Toast.makeText(ViewExperiences.this, CurrentUser.imgUrl,Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(Suggestions.this,ImageViewer.class));
             }

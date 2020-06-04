@@ -11,4 +11,6 @@ public class CurrentUser {
 
 
     public static String imgUrl;
+    public static String imgViewType="";
+    public static String imgID;
 }
