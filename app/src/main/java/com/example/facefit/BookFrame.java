@@ -157,11 +157,11 @@ public class BookFrame extends AppCompatActivity {
                 float amount = Integer.parseInt(price) * Integer.parseInt(count);
 
                 String key = mDatabase.push().getKey();
-                Booking booking = new Booking(CurrentUser.u_email, name, orderDate, amount + "", count, status);
+                Booking booking = new Booking(key,CurrentUser.u_email, name, orderDate, amount + "", count, status);
                 mDatabase.child(key).setValue(booking);
                 Toast.makeText(BookFrame.this, "Your Frame Has Been Booked", Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
-                startActivity(new Intent(BookFrame.this, DashboardActivity.class));
+                startActivity(new Intent(BookFrame.this, Booked.class));
             }
             });
     }

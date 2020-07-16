@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 					@Override
 					public void onClick(View arg0) {
 						finish();
+						System.exit(0);
 
 					}
 				});

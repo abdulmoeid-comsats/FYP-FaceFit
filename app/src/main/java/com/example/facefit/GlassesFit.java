@@ -183,7 +183,7 @@ public class GlassesFit extends AppCompatActivity {
                     return;
                 }
                 Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
-                        "Photo saved", Snackbar.LENGTH_LONG);
+                        "Photo Captured", Snackbar.LENGTH_LONG);
                 snackbar.setAction("Open in Photos", v -> {
                     File photoFile = new File(filename);
 

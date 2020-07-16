@@ -260,8 +260,15 @@ public class Login_Fragment extends Fragment implements OnClickListener {
                             	startActivity(i);
 							}
 							else {
-								Intent intent = new Intent(getActivity(), DashboardActivity.class);
-								startActivity(intent);
+								if(dataSnapshot.getValue().toString().equals("enable")) {
+									Intent intent = new Intent(getActivity(), DashboardActivity.class);
+									startActivity(intent);
+								}
+								else {
+									hideProgressDialog();
+									new CustomToast().Show_Toast(getActivity(), view,
+											"BLocked User...Contact Admin");
+								}
 							}
                         }
 
@@ -280,6 +287,7 @@ public class Login_Fragment extends Fragment implements OnClickListener {
 		if (mProgressDialog == null) {
 			mProgressDialog = new ProgressDialog(this.getActivity());
 			mProgressDialog.setMessage(getString(R.string.loading));
+			mProgressDialog.setCanceledOnTouchOutside(false);
 			mProgressDialog.setIndeterminate(true);
 		}
 		mProgressDialog.show();
